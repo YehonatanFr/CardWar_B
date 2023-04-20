@@ -130,11 +130,6 @@ void Game::printLog(){
     }
 }
 void Game::printWiner(){
-    // if(this-> turns.size() != 26)
-    // {
-    //     cout << "Game is not over yet!" << endl;
-    //     return;
-    // }
     if(tempPlayer1.cardesTaken() > tempPlayer2.cardesTaken())
             cout << tempPlayer1.getName() + " Won" << endl;
         
@@ -157,8 +152,6 @@ void Game::printStats()
     double P2Wins = (double)tempPlayer2.getWinRate() / SumTurns * 100;
     double SumDraw = (double)drawRate / SumTurns * 100;
 
-    cout << "SDraw: " << SumDraw << endl;
-    cout << "Drae: " << drawRate << endl;
     printPlayerStats(tempPlayer1, P1Wins, tempPlayer1.cardesTaken());
     printPlayerStats(tempPlayer2, P2Wins, tempPlayer2.cardesTaken());
     cout << "Draw Rate: " << SumDraw << "%, Draws: " << drawRate << endl;

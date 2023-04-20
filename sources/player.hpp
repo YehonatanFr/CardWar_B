@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include "card.hpp"
 using namespace std;
 
 namespace ariel{
@@ -11,19 +13,25 @@ namespace ariel{
 
         private:
         string name;
-        int stackSize;
+        vector<Card> myStack;
         int cardsTaken;
+        int winRate;
 
         public:
         Player(string name); //Constructor
-        // ~Player(); //Destructor
         int stacksize();
         int cardesTaken();
 
         //Getters & Setters
         void setName(string);
         string getName();
+        vector<Card> getMyStack();
+        int getWinRate();
 
+        Card playCard();
+        void addCard(Card);
+        void PlusCardsWin(int);
+        void WinCount();
 
     };
 }

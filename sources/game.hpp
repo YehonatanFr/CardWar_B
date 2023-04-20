@@ -1,25 +1,34 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "player.hpp"
 #include <iostream>
+#include "player.hpp"
+#include "card.hpp"
 #include <string>
 
 namespace ariel{
 
     class Game{
-        private:
-        Player p1;
-        Player p2;
+
+    private:
+        Player &tempPlayer1;
+        Player &tempPlayer2;
+        int drawRate;
+        vector<Card> deck;
+        vector<string> turns;
         
-        public:
-        Game(Player player1, Player player2);
-        // ~Game();
+    public:
+        Game(Player &player1, Player &player2);
+        void initDeck();
+        void shuffleDeck();
+        void CardsDeal();
+
         void playTurn();
         void printLastTurn();
         void playAll();
         void printWiner();
         void printLog();
+        void printPlayerStats(Player& player, double winRate, int cardsWon);
         void printStats();
 
     };

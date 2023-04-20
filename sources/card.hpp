@@ -17,6 +17,7 @@ namespace ariel{
         public:
         Card(int num, string suit);
         int compareTo(Card other);
+        string toString();
     };
     
 }
